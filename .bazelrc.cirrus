@@ -14,10 +14,9 @@ build --verbose_failures
 build --remote_rest_cache=http://localhost:12321 \
       --strategy=Scalac=remote \
       --strategy=Javac=remote \
-      --spawn_strategy=remote
-
-test --remote_rest_cache=http://localhost:12321 \
-     --spawn_strategy=remote
+      --strategy=ScroogeRule=remote \
+      --spawn_strategy=remote \
+      --genrule_strategy=remote
 
 # Below this line, .travis.yml will cat the default bazelrc.
 # This is needed so Bazel starts with the base workspace in its
