@@ -9,7 +9,7 @@ test_remote_cache_task:
     - sudo apt-get install libxml2-utils -y
   test_script:
     - cat .bazelrc.cirrus >> .bazelrc
-    - bash test_rules_scala.sh ci
+    - bazel build test/...
 
 test_no_cache_task:
   install_script:
@@ -17,4 +17,4 @@ test_no_cache_task:
     - sudo apt-get install libxml2-utils -y
   test_script:
     - cat .bazelrc.cirrus_no_cache >> .bazelrc
-    - bash test_rules_scala.sh ci
+    - bazel build test/...
