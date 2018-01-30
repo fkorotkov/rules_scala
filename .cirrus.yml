@@ -7,14 +7,6 @@ test_remote_cache_task:
   install_script:
     - sudo apt-get update
     - sudo apt-get install libxml2-utils -y
-  test_script:
+  build_script:
     - cat .bazelrc.cirrus >> .bazelrc
-    - bazel build test/...
-
-test_no_cache_task:
-  install_script:
-    - sudo apt-get update
-    - sudo apt-get install libxml2-utils -y
-  test_script:
-    - cat .bazelrc.cirrus_no_cache >> .bazelrc
     - bazel build test/...
